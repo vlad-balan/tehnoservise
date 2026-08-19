@@ -842,7 +842,7 @@ textarea {
 }
 
 .equip-card__img {
-    height: 240px;
+    aspect-ratio: 4/3;
     overflow: hidden;
     position: relative;
 }
@@ -854,7 +854,7 @@ textarea {
 }
 
 .equip-card--wide .equip-card__img {
-    height: 300px;
+    aspect-ratio: 16/9;
 }
 
 /* ---------- CAROUSEL ---------- */
@@ -2035,7 +2035,7 @@ a.contact-item__value:hover {
     }
 
     .equip-card--wide .equip-card__img {
-        height: 240px;
+        aspect-ratio: 4/3;
     }
 
     .equip-card__title {
