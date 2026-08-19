@@ -1164,7 +1164,7 @@ textarea {
 
 .works__grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
 }
 
@@ -1183,7 +1183,7 @@ textarea {
 }
 
 .work-card__img {
-    height: 320px;
+    height: 240px;
     overflow: hidden;
 }
 
@@ -2044,6 +2044,10 @@ a.contact-item__value:hover {
 
     .work-card__img {
         height: 260px;
+    }
+
+    .works__grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .quality__banner {
