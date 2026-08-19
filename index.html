@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ООО «Техносервис» — Производство запчастей для турбин электростанций</title>
+    <meta name="description" content="Изготовим любую деталь турбины по вашим чертежам. Более 30 лет на рынке. Собственный станочный парк с ЧПУ. Санкт-Петербург.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header" id="header">
+        <div class="container header__inner">
+            <a href="#" class="header__logo">
+                <span class="logo__icon"><img src="images/logo_white.png" alt="Техносервис" width="150" height="150"></span>
+                <div class="logo__text">
+                    <span class="logo__name">ТЕХНОСЕРВИС</span>
+                    <span class="logo__tagline">Производство запчастей для турбин</span>
+                </div>
+            </a>
+
+            <nav class="header__nav" id="nav">
+                <ul class="nav__list">
+                    <li><a href="#capabilities" class="nav__link">Возможности</a></li>
+                    <li><a href="#process" class="nav__link">Как работаем</a></li>
+                    <li><a href="#production" class="nav__link">Производство</a></li>
+                    <li><a href="#clients" class="nav__link">Заказчикам</a></li>
+                    <li><a href="contact.html" class="nav__link">Контакты</a></li>
+                </ul>
+            </nav>
+
+            <div class="header__actions">
+                <a href="tel:+79999999999" class="header__phone">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                    </svg>
+                    +7 (999) 999-99-99
+                </a>
+                <a href="#contact" class="btn btn--sm header__cta">Оставить заявку</a>
+            </div>
+
+            <button class="burger" id="burger" aria-label="Меню">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ===== MOBILE MENU ===== -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu__close" id="mobileClose" aria-label="Закрыть меню">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M18 6L6 18"/><path d="M6 6l12 12"/>
+            </svg>
+        </button>
+        <ul class="mobile-menu__list">
+            <li><a href="#capabilities" class="mobile-menu__link">Возможности</a></li>
+            <li><a href="#process" class="mobile-menu__link">Как работаем</a></li>
+            <li><a href="#production" class="mobile-menu__link">Производство</a></li>
+            <li><a href="#clients" class="mobile-menu__link">Заказчикам</a></li>
+            <li><a href="contact.html" class="mobile-menu__link">Контакты</a></li>
+        </ul>
+        <div class="mobile-menu__footer">
+            <a href="tel:+79999999999" class="mobile-menu__phone">+7 (999) 999-99-99</a>
+            <a href="#contact" class="btn btn--full">Оставить заявку</a>
+        </div>
+    </div>
+
+    <main>
+
+        <!-- ===== SECTION 1: HERO ===== -->
+        <section class="hero" id="hero">
+            <div class="hero__bg">
+                <img src="images/gradirni2.jpg" alt="Промышленная электростанция с градирнями" class="hero__img" loading="eager">
+            </div>
+            <div class="hero__overlay"></div>
+            <div class="container hero__content">
+                <div class="hero__badge fade-in">Более 30 лет на рынке</div>
+                <h1 class="hero__title fade-in">
+                    Изготовим <span class="text-accent">любую деталь турбины</span><br>
+                    по вашим чертежам
+                </h1>
+                <p class="hero__subtitle fade-in">
+                    <strong>Собственный станочный парк с ЧПУ. Точность до микрона.
+                    От одной детали до серии. Запуск производства — от 3 дней.</strong>
+                </p>
+                <div class="hero__actions fade-in">
+                    <a href="#contact" class="btn btn--lg btn--primary">
+                        Запросить расчёт
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <a href="#capabilities" class="btn btn--lg btn--outline">
+                        Наши возможности
+                    </a>
+                </div>
+                <div class="hero__stats fade-in">
+                    <div class="stat">
+                        <span class="stat__number" data-target="30">0</span><span class="stat__suffix"></span>
+                        <span class="stat__label">лет опыта</span>
+                    </div>
+                    <div class="stat__divider"></div>
+                    <div class="stat">
+                        <span class="stat__number" data-target="28">0</span>
+                        <span class="stat__label">станков в цеху</span>
+                    </div>
+                    <div class="stat__divider"></div>
+                    <div class="stat">
+                        <div><span class="stat__number" data-target="360">0</span><span class="stat__suffix">+</span></div>
+                        <span class="stat__label">выполненных заказов</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 2: PAIN POINTS ===== -->
+        <section class="pains" id="pains">
+            <div class="container">
+                <div class="section-header anim-fade">
+                    <span class="section-label">Знакомо?</span>
+                    <h2 class="section-title">Проблемы, с которыми вы сталкиваетесь</h2>
+                    <p class="section-desc">Поставщики срывают сроки, детали не проходят контроль, а простой станции стоит миллионов рублей в день</p>
+                </div>
+                <div class="pains__grid">
+                    <div class="pain-card anim-fade">
+                        <div class="pain-card__icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+                            </svg>
+                        </div>
+                        <h3 class="pain-card__title">Срыв сроков ремонта</h3>
+                        <p class="pain-card__text">Подрядчики не успевают изготовить детали к началу ремонтной кампании. Каждый день простоя — убытки в миллионы.</p>
+                        <div class="pain-card__strike"></div>
+                    </div>
+                    <div class="pain-card anim-fade">
+                        <div class="pain-card__icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+                                <path d="M12 9v4M12 17h.01"/>
+                            </svg>
+                        </div>
+                        <h3 class="pain-card__title">Нет в наличии запчастей</h3>
+                        <p class="pain-card__text">Оригинальные детали отсутствуют на складах, а аналоги не соответствуют чертежам. Ремонт стоит на месте.</p>
+                        <div class="pain-card__strike"></div>
+                    </div>
+                    <div class="pain-card anim-fade">
+                        <div class="pain-card__icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/>
+                            </svg>
+                        </div>
+                        <h3 class="pain-card__title">Брак и неточности</h3>
+                        <p class="pain-card__text">Детали не проходят входной контроль, допуски не соблюдаются. Приходится переделывать — теряете время и деньги.</p>
+                        <div class="pain-card__strike"></div>
+                    </div>
+                </div>
+                <div class="pains__cta anim-fade">
+                    <p class="pains__cta-text">Мы решаем эти проблемы — <span class="text-accent">полностью.</span></p>
+                    <a href="#contact" class="btn btn--primary btn--lg">Получить предложение</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 3: CAPABILITIES / STANOCNIY PARK ===== -->
+        <section class="capabilities" id="capabilities">
+            <div class="capabilities__bg" aria-hidden="true"></div>
+            <div class="container">
+                <div class="section-header anim-fade">
+                    <span class="section-label">Оборудование</span>
+                    <h2 class="section-title">Наш станочный парк</h2>
+                    <p class="section-desc">28 станков 9 типов — от тяжёлых карусельных с обработкой до Ø3200 мм до многоосевых фрезерных с ЧПУ. Изготовим детали, которые не возьмут другие.</p>
+                </div>
+                <div class="capabilities__grid">
+                    <!-- Токарные станки -->
+                    <div class="equip-card anim-fade">
+                        <div class="equip-card__img">
+                            <div class="carousel" data-carousel>
+                                <div class="carousel__track">
+                                    <div class="carousel__slide active">
+                                        <img src="images/tokarniy_16k20.webp" alt="Токарный станок 16К20" loading="lazy">
+                                        <span class="carousel__caption">16К20 — универсальный</span>
+                                    </div>
+                                    <div class="carousel__slide">
+                                        <img src="images/tokarniy_cpu_1.webp" alt="Токарный станок с ЧПУ" loading="lazy">
+                                        <span class="carousel__caption">Токарный с ЧПУ</span>
+                                    </div>
+                                    <div class="carousel__slide">
+                                        <img src="images/tokarniy_cpu_2.webp" alt="Токарный станок с ЧПУ" loading="lazy">
+                                        <span class="carousel__caption">Токарный с ЧПУ</span>
+                                    </div>
+                                </div>
+                                <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Предыдущее фото">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+                                </button>
+                                <button class="carousel__btn carousel__btn--next" type="button" aria-label="Следующее фото">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
+                                </button>
+                                <div class="carousel__dots">
+                                    <button class="carousel__dot active" type="button" aria-label="Слайд 1"></button>
+                                    <button class="carousel__dot" type="button" aria-label="Слайд 2"></button>
+                                    <button class="carousel__dot" type="button" aria-label="Слайд 3"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="equip-card__content">
+                            <h3 class="equip-card__title">Токарные станки <span class="equip-count">8 ед.</span></h3>
+                            <p class="equip-card__text">Тяжёлые и средние токарные станки для обработки валов, втулок, фланцев, шестерён и роторов.</p>
+                            <ul class="equip-card__list">
+                                <li>1× ДИП 500 — тяжёлый, повышенной точности</li>
+                                <li>1× ДИП 400</li>
+                                <li>4× 16К20 — универсальные</li>
+                                <li>2× токарно-винторезные с ЧПУ</li>
+                            </ul>
+                            <div class="equip-card__tags">
+                                <span class="tag">Универсальные</span>
+                                <span class="tag">ЧПУ</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Карусельные станки -->
+                    <div class="equip-card equip-card--featured anim-fade">
+                        <div class="equip-card__img">
+                            <div class="img-placeholder">[Фото: карусельный станок]</div>
+                        </div>
+                        <div class="equip-card__content">
+                            <h3 class="equip-card__title">Карусельные станки <span class="equip-count">4 ед.</span></h3>
+                            <div class="equip-card__highlight">Ø до 3200 мм</div>
+                            <p class="equip-card__text">Берём детали диаметром более <strong>3 метров</strong> — корпуса, диски, обода турбин, которые не возьмут другие.</p>
+                            <ul class="equip-card__list">
+                                <li>3× универсальных — обработка до <strong>Ø3200 мм</strong></li>
+                                <li>1× с ЧПУ — обработка до Ø2200 мм</li>
+                            </ul>
+                            <div class="equip-card__tags">
+                                <span class="tag">Универсальные</span>
+                                <span class="tag">ЧПУ</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Фрезерные станки -->
+                    <div class="equip-card anim-fade">
+                        <div class="equip-card__img">
+                            <div class="img-placeholder">[Фото: фрезерный станок]</div>
+                        </div>
+                        <div class="equip-card__content">
+                            <h3 class="equip-card__title">Фрезерные станки <span class="equip-count">4 ед.</span></h3>
+                            <p class="equip-card__text">Фрезерование сложных контуров, пазов и объёмных поверхностей любой конфигурации.</p>
+                            <ul class="equip-card__list">
+                                <li>2× универсальных</li>
+                                <li>2× с ЧПУ — 3+1 ось (многоосевая обработка)</li>
+                            </ul>
+                            <div class="equip-card__tags">
+                                <span class="tag">Универсальные</span>
+                                <span class="tag">ЧПУ</span>
+                                <span class="tag">3+1 ось</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Расточные станки -->
+                    <div class="equip-card anim-fade">
+                        <div class="equip-card__img">
+                            <div class="img-placeholder">[Фото: расточной станок]</div>
+                        </div>
+                        <div class="equip-card__content">
+                            <h3 class="equip-card__title">Расточные станки <span class="equip-count">3 ед.</span></h3>
+                            <p class="equip-card__text">Расточка отверстий, обработка корпусов и крупногабаритных деталей с точным позиционированием осей.</p>
+                            <ul class="equip-card__list">
+                                <li>3× универсальных расточных</li>
+                            </ul>
+                            <div class="equip-card__tags">
+                                <span class="tag">Универсальные</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Долбежный станок -->
+                    <div class="equip-card anim-fade">
+                        <div class="equip-card__img">
+                            <img src="images/dolbejniy.webp" alt="Долбежный станок" loading="lazy">
+                        </div>
+                        <div class="equip-card__content">
+                            <h3 class="equip-card__title">Долбежный станок <span class="equip-count">1 ед.</span></h3>
+                            <p class="equip-card__text">Обработка внутренних пазов, шпоночных канавок и сложных внутренних профилей в деталях турбин.</p>
+                            <div class="equip-card__tags">
+                                <span class="tag">Прецизионный</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Сверлильные станки -->
+                    <div class="equip-card anim-fade">
+                        <div class="equip-card__img">
+                            <div class="img-placeholder">[Фото: сверлильный станок]</div>
+                        </div>
+                        <div class="equip-card__content">
+                            <h3 class="equip-card__title">Сверлильные станки <span class="equip-count">2 ед.</span></h3>
+                            <p class="equip-card__text">Сверление, рассверливание, зенкерование и нарезка резьбы — от мелких отверстий до крупных.</p>
+                            <ul class="equip-card__list">
+                                <li>1× радиально-сверлильный</li>
+                                <li>1× настольный сверлильный</li>
+                            </ul>
+                            <div class="equip-card__tags">
+                                <span class="tag">Радиальный</span>
+                                <span class="tag">Настольный</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Шлифовальные станки -->
+                    <div class="equip-card anim-fade">
+                        <div class="equip-card__img">
+                            <div class="carousel" data-carousel>
+                                <div class="carousel__track">
+                                    <div class="carousel__slide active">
+                                        <img src="images/shlifovka_ploskaya.webp" alt="Плоскошлифовальный станок" loading="lazy">
+                                        <span class="carousel__caption">Плоскошлифовальный — точные плоские поверхности</span>
+                                    </div>
+                                    <div class="carousel__slide">
+                                        <img src="images/shlifovka_narugnaya.webp" alt="Наружно-цилиндрический шлифовальный станок" loading="lazy">
+                                        <span class="carousel__caption">Наружно-цилиндрический — валы и цилиндры</span>
+                                    </div>
+                                    <div class="carousel__slide">
+                                        <img src="images/shlifovka_vnutrenniya.webp" alt="Внутришлифовальный станок" loading="lazy">
+                                        <span class="carousel__caption">Внутришлифовальный — отверстия и втулки</span>
+                                    </div>
+                                </div>
+                                <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Предыдущее фото">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+                                </button>
+                                <button class="carousel__btn carousel__btn--next" type="button" aria-label="Следующее фото">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
+                                </button>
+                                <div class="carousel__dots">
+                                    <button class="carousel__dot active" type="button" aria-label="Слайд 1"></button>
+                                    <button class="carousel__dot" type="button" aria-label="Слайд 2"></button>
+                                    <button class="carousel__dot" type="button" aria-label="Слайд 3"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="equip-card__content">
+                            <h3 class="equip-card__title">Шлифовальные станки <span class="equip-count">3 ед.</span></h3>
+                            <p class="equip-card__text">Три универсальных станка для финишной обработки — достижение точных размеров и идеальной шероховатости поверхности:</p>
+                            <ul class="equip-card__list">
+                                <li>1× плоскошлифовальный — точные плоские поверхности</li>
+                                <li>1× наружно-цилиндрический — валы и цилиндры</li>
+                                <li>1× внутришлифовальный — отверстия и втулки</li>
+                            </ul>
+                            <div class="equip-card__tags">
+                                <span class="tag">Плоское</span>
+                                <span class="tag">Наружное</span>
+                                <span class="tag">Внутреннее</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Ленточно-пильные станки -->
+                    <div class="equip-card anim-fade">
+                        <div class="equip-card__img">
+                            <div class="img-placeholder">[Фото: ленточно-пильный станок]</div>
+                        </div>
+                        <div class="equip-card__content">
+                            <h3 class="equip-card__title">Ленточно-пильные станки <span class="equip-count">2 ед.</span></h3>
+                            <p class="equip-card__text">Точный раскрой заготовок и подготовка материала к дальнейшей механической обработке.</p>
+                            <div class="equip-card__tags">
+                                <span class="tag">Раскрой</span>
+                                <span class="tag">Заготовки</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Заточной станок -->
+                    <div class="equip-card anim-fade">
+                        <div class="equip-card__img">
+                            <img src="images/zatochka_3d642e.webp" alt="Заточной станок" loading="lazy">
+                        </div>
+                        <div class="equip-card__content">
+                            <h3 class="equip-card__title">Заточной станок <span class="equip-count">1 ед.</span></h3>
+                            <p class="equip-card__text">Заточка и восстановление режущего инструмента — всегда острые резцы и фрезы для точной работы.</p>
+                            <div class="equip-card__tags">
+                                <span class="tag">Обслуживание</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="capabilities__extra anim-fade">
+                    <div class="capabilities__extra-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
+                        </svg>
+                    </div>
+                    <div class="capabilities__extra-text">
+                        <h3>Полный парк слесарного инструмента</h3>
+                        <p>Помимо станков, в цеху есть весь необходимый <strong>ручной, электрический и пневматический слесарный инструмент</strong> — сборка, подгонка, финишная обработка и контроль выполняются на месте, без привлечения сторонних подрядчиков.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="process" id="process">
+            <div class="container">
+                <div class="section-header anim-fade">
+                    <span class="section-label">Процесс</span>
+                    <h2 class="section-title">Как мы работаем</h2>
+                    <p class="section-desc">Прозрачный процесс от заявки до отгрузки — вы контролируете каждый этап</p>
+                </div>
+                <div class="process__timeline">
+                    <div class="process-step anim-fade">
+                        <div class="process-step__number">01</div>
+                        <div class="process-step__content">
+                            <h3>Заявка и чертежи</h3>
+                            <p>Вы присылаете чертёж детали и требования. Мы анализируем, задаём вопросы и утверждаем техзадание.</p>
+                        </div>
+                    </div>
+                    <div class="process-step anim-fade">
+                        <div class="process-step__number">02</div>
+                        <div class="process-step__content">
+                            <h3>Расчёт и согласование</h3>
+                            <p>Готовим коммерческое предложение с точными сроками и стоимостью. Согласуем условия и подписываем договор.</p>
+                        </div>
+                    </div>
+                    <div class="process-step anim-fade">
+                        <div class="process-step__number">03</div>
+                        <div class="process-step__content">
+                            <h3>Производство</h3>
+                            <p>Запускаем в работу на нужных станках. Фотоотчёт на каждом этапе — вы видите прогресс онлайн.</p>
+                        </div>
+                    </div>
+                    <div class="process-step anim-fade">
+                        <div class="process-step__number">04</div>
+                        <div class="process-step__content">
+                            <h3>Контроль и отгрузка</h3>
+                            <p>Многоэтапный контроль качества с измерением каждого параметра. Упаковка и доставка по всей России.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 5: PRODUCTION GALLERY ===== -->
+        <section class="production" id="production">
+            <div class="container">
+                <div class="section-header anim-fade">
+                    <span class="section-label">Производство</span>
+                    <h2 class="section-title">Наш цех</h2>
+                    <p class="section-desc">Реальное производство, реальные станки, реальные результаты</p>
+                </div>
+                <div class="production__gallery anim-fade">
+                    <div class="gallery-item gallery-item--lg">
+                        <div class="img-placeholder">[Фото: общий вид цеха]</div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="img-placeholder">[Фото: станок в работе]</div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="img-placeholder">[Фото: готовая деталь]</div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="img-placeholder">[Фото: контроль качества]</div>
+                    </div>
+                    <div class="gallery-item gallery-item--lg">
+                        <div class="img-placeholder">[Фото: отгрузка деталей]</div>
+                    </div>
+                </div>
+                <div class="production__numbers anim-fade">
+                    <div class="number-card">
+                        <span class="number-card__value">30+</span>
+                        <span class="number-card__label">лет на рынке</span>
+                    </div>
+                    <div class="number-card">
+                    <span class="number-card__value">28</span>
+                    <span class="number-card__label">станков в парке</span>
+                    </div>
+                    <div class="number-card">
+                        <span class="number-card__value">500+</span>
+                        <span class="number-card__label">заказов выполнено</span>
+                    </div>
+                    <div class="number-card">
+                        <span class="number-card__value">100%</span>
+                        <span class="number-card__label">полный цикл — без субподряда</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 6: FOR WHOM ===== -->
+        <section class="clients" id="clients">
+            <div class="container">
+                <div class="section-header anim-fade">
+                    <span class="section-label">Заказчикам</span>
+                    <h2 class="section-title">Для кого мы работаем</h2>
+                    <p class="section-desc">Электростанции — наш основной рынок. Но наши возможности шире.</p>
+                </div>
+                <div class="clients__tabs anim-fade">
+                    <div class="tabs">
+                        <button class="tab active" data-tab="power">Электростанции</button>
+                        <button class="tab" data-tab="science">НИИ и лаборатории</button>
+                    </div>
+                    <div class="tab-content active" id="tab-power">
+                        <div class="tab-content__inner">
+                            <div class="tab-content__img">
+                                <div class="img-placeholder img-placeholder--tall">[Фото: турбина электростанции]</div>
+                            </div>
+                            <div class="tab-content__text">
+                                <h3>Запчасти и детали для турбин</h3>
+                                <p>Изготовим любую деталь по вашим чертежам — от лопаток и валов до корпусов и уплотнений. Работаем с турбинами всех типов.</p>
+                                <ul>
+                                    <li>Роторы, валы, диски</li>
+                                    <li>Лопатки направляющего аппарата</li>
+                                    <li>Корпусные детали и фланцы</li>
+                                    <li>Уплотнения и втулки</li>
+                                    <li>Детали регуляторов и сервомоторов</li>
+                                </ul>
+                                <a href="#contact" class="btn btn--primary">Получить расчёт для вашей станции</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="tab-science">
+                        <div class="tab-content__inner">
+                            <div class="tab-content__img">
+                                <div class="img-placeholder img-placeholder--tall">[Фото: лабораторная установка]</div>
+                            </div>
+                            <div class="tab-content__text">
+                                <h3>Детали для научных установок</h3>
+                                <p>Наш станочный парк позволяет изготовить детали для лабораторных стендов, экспериментальных установок и уникального оборудования.</p>
+                                <ul>
+                                    <li>Детали из конструкционных сталей и сплавов</li>
+                                    <li>Прецизионные валы и цилиндры</li>
+                                    <li>Корпуса и фланцы для камер</li>
+                                    <li>Шпиндели и муфты</li>
+                                    <li>Кронштейны и основания стендов</li>
+                                </ul>
+                                <a href="#contact" class="btn btn--primary">Обсудить задачу</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 7: CONTACT ===== -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="section-header anim-fade">
+                    <span class="section-label">Связаться с нами</span>
+                    <h2 class="section-title">Обсудим ваш заказ</h2>
+                    <p class="section-desc">Прислать чертёж, запросить расчёт или назначить встречу — заполните форму и мы свяжемся с вами в течение часа</p>
+                </div>
+                <div class="contact__grid anim-fade">
+                    <div class="contact__info">
+                        <div class="contact-item">
+                            <div class="contact-item__icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="contact-item__label">Телефон</span>
+                                <a href="tel:+79999999999" class="contact-item__value">+7 (999) 999-99-99</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item__icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="contact-item__label">Email</span>
+                                <a href="mailto:e-meil@emeil.ru" class="contact-item__value">e-meil@emeil.ru</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item__icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="contact-item__label">Адреса</span>
+                                <span class="contact-item__value">Производство: Шоссе Революции, 58</span>
+                                <span class="contact-item__value contact-item__value--light">Офис: пр. Луначарского, 72к1, оф. 31</span>
+                                <a href="contact.html" class="contact-item__link">Смотреть на карте →</a>
+                            </div>
+                        </div>
+                        <div class="contact-item contact-item--messengers">
+                            <span class="contact-item__label">Мессенджеры</span>
+                            <div class="messengers">
+                                <!-- Telegram placeholder -->
+                                <a href="#" class="messenger-btn" title="Telegram">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.67-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.37-.49 1.02-.75 3.99-1.74 6.65-2.89 7.98-3.44 3.8-1.58 4.59-1.86 5.1-1.87.11 0 .37.03.54.17.14.12.18.28.2.45-.01.06.01.24 0 .38z"/>
+                                    </svg>
+                                </a>
+                                <!-- WhatsApp placeholder -->
+                                <a href="#" class="messenger-btn" title="WhatsApp">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="contact__form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Как к вам обращаться</label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Иванов Иван Иванович" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company" class="form-label">Компания</label>
+                            <input type="text" id="company" name="company" class="form-input" placeholder="Название организации">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Телефон *</label>
+                            <input type="tel" id="phone" name="phone" class="form-input" placeholder="+7 (___) ___-__-__" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="name@company.ru">
+                        </div>
+                        <div class="form-group form-group--full">
+                            <label for="message" class="form-label">Опишите задачу</label>
+                            <textarea id="message" name="message" class="form-textarea" placeholder="Какие детали нужны, количество, сроки — опишите кратко или укажите, что прикрепите чертежи"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--full btn--lg">
+                            Отправить заявку
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/>
+                            </svg>
+                        </button>
+                        <p class="form-note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__left">
+                <a href="#" class="header__logo">
+                    <span class="logo__icon"><img src="images/logo_white.png" alt="Техносервис" width="150" height="150"></span>
+                    <div class="logo__text">
+                        <span class="logo__name">ТЕХНОСЕРВИС</span>
+                        <span class="logo__tagline">Производство запчастей для турбин</span>
+                    </div>
+                </a>
+                <p class="footer__copy">© 2026 ООО «Техносервис». Все права защищены.</p>
+            </div>
+            <div class="footer__center">
+                <div class="footer__links">
+                    <a href="#capabilities">Возможности</a>
+                    <a href="#process">Как работаем</a>
+                    <a href="#production">Производство</a>
+                    <a href="#contact">Контакты</a>
+                </div>
+            </div>
+            <div class="footer__right">
+                <a href="tel:+79999999999" class="footer__phone">+7 (999) 999-99-99</a>
+                <a href="mailto:e-meil@emeil.ru" class="footer__email">e-meil@emeil.ru</a>
+                <div class="messengers messengers--footer">
+                    <a href="#" class="messenger-btn" title="Telegram">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.67-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.37-.49 1.02-.75 3.99-1.74 6.65-2.89 7.98-3.44 3.8-1.58 4.59-1.86 5.1-1.87.11 0 .37.03.54.17.14.12.18.28.2.45-.01.06.01.24 0 .38z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="messenger-btn" title="WhatsApp">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
