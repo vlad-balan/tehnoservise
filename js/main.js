@@ -371,4 +371,289 @@ document.addEventListener('DOMContentLoaded', () => {
 
         carouselObserver.observe(carousel);
     });
+
+    /* ---------- INTERACTIVE BACKGROUNDS (canvas) ---------- */
+    const bgReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Общая обвязка: canvas на весь блок, указатель, старт/стоп по видимости
+    function bgEngine(section, drawFrame, initState) {
+        const canvas = section.querySelector('.bgfx');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        const pointer = { x: -9999, y: -9999, active: false };
+        const state = { w: 0, h: 0 };
+        let raf = null;
+
+        const resize = () => {
+            const dpr = Math.min(window.devicePixelRatio || 1, 2);
+            state.w = section.clientWidth;
+            state.h = section.clientHeight;
+            canvas.width = Math.round(state.w * dpr);
+            canvas.height = Math.round(state.h * dpr);
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            if (initState) initState(state);
+            if (bgReducedMotion) drawFrame(ctx, state, pointer, 0); // статичный кадр
+        };
+
+        const loop = (now) => {
+            drawFrame(ctx, state, pointer, now);
+            raf = requestAnimationFrame(loop);
+        };
+
+        section.addEventListener('pointermove', (e) => {
+            const r = canvas.getBoundingClientRect();
+            pointer.x = e.clientX - r.left;
+            pointer.y = e.clientY - r.top;
+            pointer.active = true;
+        }, { passive: true });
+
+        section.addEventListener('pointerleave', () => {
+            pointer.active = false;
+            pointer.x = -9999;
+            pointer.y = -9999;
+        }, { passive: true });
+
+        window.addEventListener('resize', resize, { passive: true });
+        resize();
+
+        if (bgReducedMotion) return; // без анимации
+
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !raf) {
+                    raf = requestAnimationFrame(loop);
+                } else if (!entry.isIntersecting && raf) {
+                    cancelAnimationFrame(raf);
+                    raf = null;
+                }
+            });
+        }, { threshold: 0.05 });
+        io.observe(section);
+    }
+
+    /* --- Эффект 1: «Чертёжная сетка» (блок «Знакомо?») --- */
+    const gridBg = document.querySelector('.bgfx--grid');
+    if (gridBg) {
+        const STEP = 36;          // мелкий шаг сетки
+        const MAJOR = 5;          // каждая 5-я линия — основная (узлы на них)
+        const INFLUENCE = 180;    // радиус влияния курсора
+        const slate = (a) => `rgba(148, 163, 184, ${a})`;
+        const amber = (a) => `rgba(245, 158, 11, ${a})`;
+
+        bgEngine(gridBg.closest('section'), (ctx, s, pointer, now) => {
+            const { w, h } = s;
+            ctx.clearRect(0, 0, w, h);
+
+            // Линии сетки
+            ctx.lineWidth = 1;
+            let i = 0;
+            for (let x = 0.5; x <= w; x += STEP, i++) {
+                ctx.strokeStyle = slate(i % MAJOR === 0 ? 0.11 : 0.05);
+                ctx.beginPath();
+                ctx.moveTo(x, 0);
+                ctx.lineTo(x, h);
+                ctx.stroke();
+            }
+            i = 0;
+            for (let y = 0.5; y <= h; y += STEP, i++) {
+                ctx.strokeStyle = slate(i % MAJOR === 0 ? 0.11 : 0.05);
+                ctx.beginPath();
+                ctx.moveTo(0, y);
+                ctx.lineTo(w, y);
+                ctx.stroke();
+            }
+
+            // Спонтанные волны — сетка живёт даже без курсора
+            if (!s.ripples) s.ripples = [];
+            if (!s.lastSpawn) s.lastSpawn = 0;
+            if (now - s.lastSpawn > 1100) {
+                s.lastSpawn = now;
+                const gx = Math.round(Math.random() * (w / STEP / MAJOR)) * STEP * MAJOR;
+                const gy = Math.round(Math.random() * (h / STEP / MAJOR)) * STEP * MAJOR;
+                s.ripples.push({ x: gx, y: gy, born: now });
+            }
+            s.ripples = s.ripples.filter(r => now - r.born < 1600);
+
+            // Узлы на пересечениях основных линий
+            const majorStep = STEP * MAJOR;
+            for (let gx = 0; gx <= w + 1; gx += majorStep) {
+                for (let gy = 0; gy <= h + 1; gy += majorStep) {
+                    // тихая «дышащая» подсветка узлов
+                    const hash = Math.sin(gx * 12.9898 + gy * 78.233) * 43758.5453;
+                    const breathe = 0.5 + 0.5 * Math.sin(now / 1600 + hash);
+                    ctx.fillStyle = slate(0.18 + breathe * 0.15);
+                    ctx.beginPath();
+                    ctx.arc(gx, gy, 1.6, 0, Math.PI * 2);
+                    ctx.fill();
+
+                    // курсор «будит» ближайшие узлы
+                    if (pointer.active) {
+                        const d = Math.hypot(pointer.x - gx, pointer.y - gy);
+                        if (d < INFLUENCE) {
+                            const k = 1 - d / INFLUENCE;
+                            ctx.fillStyle = amber(0.25 + k * 0.75);
+                            ctx.beginPath();
+                            ctx.arc(gx, gy, 2 + k * 1.5, 0, Math.PI * 2);
+                            ctx.fill();
+                            // засечки по кресту, как на чертеже
+                            ctx.strokeStyle = amber(0.3 + k * 0.5);
+                            ctx.lineWidth = 1;
+                            const tick = 4 + k * 4;
+                            ctx.beginPath();
+                            ctx.moveTo(gx - tick, gy); ctx.lineTo(gx + tick, gy);
+                            ctx.moveTo(gx, gy - tick); ctx.lineTo(gx, gy + tick);
+                            ctx.stroke();
+                        }
+                    }
+
+                    // вспышка узлов от проходящей волны
+                    for (const r of s.ripples) {
+                        const age = now - r.born;
+                        const ring = age * 0.14;
+                        const dist = Math.hypot(gx - r.x, gy - r.y);
+                        if (Math.abs(dist - ring) < 26) {
+                            const fade = 1 - age / 1600;
+                            ctx.fillStyle = amber(0.6 * fade);
+                            ctx.beginPath();
+                            ctx.arc(gx, gy, 2.4, 0, Math.PI * 2);
+                            ctx.fill();
+                        }
+                    }
+                }
+            }
+
+            // сами кольца волн
+            for (const r of s.ripples) {
+                const age = now - r.born;
+                const ring = age * 0.14;
+                const fade = 1 - age / 1600;
+                ctx.strokeStyle = amber(0.28 * fade);
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                ctx.arc(r.x, r.y, ring, 0, Math.PI * 2);
+                ctx.stroke();
+            }
+        });
+    }
+
+    /* --- Эффект 2: «Сеть как печатная плата» (блок «Как мы работаем») --- */
+    const pcbBg = document.querySelector('.bgfx--pcb');
+    if (pcbBg) {
+        const LINK_D = 150;      // макс. дистанция связи
+        const CURSOR_R = 190;    // радиус влияния курсора
+        const slate = (a) => `rgba(148, 163, 184, ${a})`;
+        const amber = (a) => `rgba(245, 158, 11, ${a})`;
+
+        bgEngine(pcbBg.closest('section'), (ctx, s, pointer, now) => {
+            const { w, h } = s;
+            ctx.clearRect(0, 0, w, h);
+            if (!s.parts) s.parts = [];
+            if (!s.pulses) s.pulses = [];
+
+            // медленный дрейф + мягкое притяжение к курсору
+            for (const p of s.parts) {
+                if (pointer.active) {
+                    const dx = pointer.x - p.x;
+                    const dy = pointer.y - p.y;
+                    const d = Math.hypot(dx, dy);
+                    if (d > 40 && d < CURSOR_R) {
+                        p.vx += (dx / d) * 0.012;
+                        p.vy += (dy / d) * 0.012;
+                    }
+                }
+                p.vx *= 0.985;
+                p.vy *= 0.985;
+                p.x += p.vx;
+                p.y += p.vy;
+                if (p.x < -20) p.x = w + 20; else if (p.x > w + 20) p.x = -20;
+                if (p.y < -20) p.y = h + 20; else if (p.y > h + 20) p.y = -20;
+            }
+
+            // связи строго под 90° — дорожки платы с «переходными отверстиями»
+            for (let a = 0; a < s.parts.length; a++) {
+                for (let b = a + 1; b < s.parts.length; b++) {
+                    const A = s.parts[a];
+                    const B = s.parts[b];
+                    const d = Math.hypot(A.x - B.x, A.y - B.y);
+                    if (d > LINK_D) continue;
+                    const base = (1 - d / LINK_D) * 0.16;
+                    const mx = (A.x + B.x) / 2;
+                    const my = (A.y + B.y) / 2;
+                    let near = 0;
+                    if (pointer.active) {
+                        const dm = Math.hypot(pointer.x - mx, pointer.y - my);
+                        if (dm < CURSOR_R) near = 1 - dm / CURSOR_R;
+                    }
+                    ctx.strokeStyle = near > 0
+                        ? amber(base + near * 0.3)
+                        : slate(base);
+                    ctx.lineWidth = 1;
+                    ctx.beginPath();
+                    ctx.moveTo(A.x, A.y);
+                    ctx.lineTo(B.x, A.y);
+                    ctx.lineTo(B.x, B.y);
+                    ctx.stroke();
+                    if (base > 0.08) {
+                        ctx.fillStyle = near > 0 ? amber(base + near * 0.2) : slate(base);
+                        ctx.beginPath();
+                        ctx.arc(B.x, A.y, 1.3, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                }
+            }
+
+            // пэды (частицы)
+            for (const p of s.parts) {
+                let near = 0;
+                if (pointer.active) {
+                    const d = Math.hypot(pointer.x - p.x, pointer.y - p.y);
+                    if (d < CURSOR_R) near = 1 - d / CURSOR_R;
+                }
+                ctx.fillStyle = near > 0 ? amber(0.35 + near * 0.65) : slate(0.4);
+                ctx.fillRect(p.x - 1.5, p.y - 1.5, 3, 3);
+            }
+
+            // импульсы, бегущие по дорожкам
+            if (!s.lastPulse) s.lastPulse = 0;
+            if (now - s.lastPulse > 700 && s.parts.length > 1) {
+                s.lastPulse = now;
+                const A = s.parts[Math.floor(Math.random() * s.parts.length)];
+                const B = s.parts[Math.floor(Math.random() * s.parts.length)];
+                if (A !== B && Math.hypot(A.x - B.x, A.y - B.y) < LINK_D) {
+                    s.pulses.push({ A, B, born: now });
+                }
+            }
+            s.pulses = s.pulses.filter(p => now - p.born < 900);
+            for (const p of s.pulses) {
+                const t = (now - p.born) / 900;
+                const fade = Math.sin(Math.PI * t);
+                const seg1 = Math.abs(p.B.x - p.A.x);
+                const seg2 = Math.abs(p.B.y - p.A.y);
+                const total = seg1 + seg2 || 1;
+                const dist = t * total;
+                let x, y;
+                if (dist <= seg1) {
+                    x = p.A.x + (p.B.x - p.A.x) * (seg1 ? dist / seg1 : 0);
+                    y = p.A.y;
+                } else {
+                    x = p.B.x;
+                    y = p.A.y + (p.B.y - p.A.y) * (seg2 ? (dist - seg1) / seg2 : 0);
+                }
+                ctx.fillStyle = amber(0.9 * fade);
+                ctx.beginPath();
+                ctx.arc(x, y, 2, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }, (s) => {
+            // init / resize: засеять частицы
+            const count = Math.max(24, Math.min(64, Math.round(s.w * s.h / 26000)));
+            s.parts = Array.from({ length: count }, () => ({
+                x: Math.random() * s.w,
+                y: Math.random() * s.h,
+                vx: (Math.random() - 0.5) * 0.24,
+                vy: (Math.random() - 0.5) * 0.24
+            }));
+            s.pulses = [];
+        });
+    }
 });
