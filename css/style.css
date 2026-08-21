@@ -130,6 +130,7 @@ textarea {
     align-items: center;
     justify-content: center;
     gap: 8px;
+    padding: 14px 28px;
     font-weight: 600;
     font-size: 0.95rem;
     border-radius: var(--radius-sm);
