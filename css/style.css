@@ -1776,9 +1776,9 @@ a.contact-item__value:hover {
     box-shadow: 0 0 8px rgba(42, 111, 219, 0.6);
 }
 
-.address-card__dot--red {
-    background: #e33b32;
-    box-shadow: 0 0 8px rgba(227, 59, 50, 0.6);
+.address-card__dot--green {
+    background: #2fb344;
+    box-shadow: 0 0 8px rgba(47, 179, 68, 0.6);
 }
 
 .address-card {
