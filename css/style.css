@@ -1880,6 +1880,87 @@ a.contact-item__value:hover {
     color: var(--color-text-3);
 }
 
+.footer__req {
+    margin-top: 6px;
+    font-size: 0.8rem;
+    color: var(--color-text-3);
+}
+
+.footer__req a {
+    color: var(--color-text-2);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color var(--transition);
+}
+
+.footer__req a:hover {
+    color: var(--color-accent);
+}
+
+/* ---------- REQUISITES (contact page) ---------- */
+.requisites {
+    padding: var(--section-py) 0;
+    background: var(--color-bg-2);
+    border-top: 1px solid var(--color-border);
+}
+
+.requisites__card {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 48px;
+    align-items: center;
+    padding: 40px 48px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+}
+
+.requisites__title {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--color-white);
+    margin: 10px 0 24px;
+}
+
+.requisites__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.req-row {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 16px;
+    align-items: baseline;
+}
+
+.req-row dt {
+    font-size: 0.85rem;
+    color: var(--color-text-3);
+}
+
+.req-row dd {
+    font-size: 0.95rem;
+    color: var(--color-text);
+    font-weight: 500;
+}
+
+.requisites__download {
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.requisites__hint {
+    font-size: 0.9rem;
+    color: var(--color-text-2);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
 .footer__center {
     flex: 1;
     display: flex;
@@ -2054,6 +2135,16 @@ a.contact-item__value:hover {
 
     .quality__badge svg {
         margin-bottom: 0;
+    }
+
+    .requisites__card {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 32px;
+    }
+
+    .requisites__download {
+        text-align: left;
     }
 
     .capabilities__extra {
@@ -2248,6 +2339,19 @@ a.contact-item__value:hover {
     .quality__cert {
         width: 132px;
         height: 176px;
+    }
+
+    .requisites__card {
+        padding: 24px;
+    }
+
+    .requisites__title {
+        font-size: 1.3rem;
+    }
+
+    .req-row {
+        grid-template-columns: 1fr;
+        gap: 2px;
     }
 
     .tabs {
