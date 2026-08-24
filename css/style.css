@@ -1898,6 +1898,13 @@ a.contact-item__value:hover {
 }
 
 /* ---------- REQUISITES (contact page) ---------- */
+.contact-item__value--dim {
+    font-size: 0.95rem;
+    color: var(--color-text-2);
+    display: block;
+    margin-top: 2px;
+}
+
 .requisites {
     padding: var(--section-py) 0;
     background: var(--color-bg-2);
