@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vlad-balan.github.io/tehnoservise/sitemap.xml
