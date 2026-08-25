@@ -439,7 +439,28 @@
                     <!-- Ленточно-пильные станки -->
                     <div class="equip-card anim-fade">
                         <div class="equip-card__img">
-                            <img src="images/lentochno-pilniy.webp" alt="Ленточно-пильный станок" loading="lazy">
+                            <div class="carousel" data-carousel>
+                                <div class="carousel__track">
+                                    <div class="carousel__slide active">
+                                        <img src="images/lentochno-pilniy.webp" alt="Ленточно-пильный станок" loading="lazy">
+                                        <span class="carousel__caption">Ленточно-пильный станок</span>
+                                    </div>
+                                    <div class="carousel__slide">
+                                        <img src="images/lentochno-pilniy_2.webp" alt="Ленточно-пильный станок" loading="lazy">
+                                        <span class="carousel__caption">Ленточно-пильный станок</span>
+                                    </div>
+                                </div>
+                                <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Предыдущее фото">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+                                </button>
+                                <button class="carousel__btn carousel__btn--next" type="button" aria-label="Следующее фото">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
+                                </button>
+                                <div class="carousel__dots">
+                                    <button class="carousel__dot active" type="button" aria-label="Слайд 1"></button>
+                                    <button class="carousel__dot" type="button" aria-label="Слайд 2"></button>
+                                </div>
+                            </div>
                         </div>
                         <div class="equip-card__content">
                             <h3 class="equip-card__title">Ленточно-пильные станки <span class="equip-count">2 ед.</span></h3>
@@ -524,7 +545,7 @@
                 <div class="section-header anim-fade">
                     <span class="section-label">Наши работы</span>
                     <h2 class="section-title">Детали, которые мы изготовили</h2>
-                    <p class="section-desc">Диафрагмы и корпусные детали турбин — от чертежа заказчика до готовой детали. Всё изготовлено на нашем оборудовании, без субподряда.</p>
+                    <p class="section-desc">Диафрагмы, корпусные детали, поршни, уплотнительные кольца, сварочные работы — от чертежа заказчика до готовой детали. Всё изготовлено на нашем оборудовании, без субподряда.</p>
                 </div>
                 <div class="works__grid">
                     <div class="work-card anim-fade">
@@ -587,6 +608,36 @@
                             <span class="tag">Корпус</span>
                         </div>
                     </div>
+                    <div class="work-card anim-fade">
+                        <div class="work-card__img">
+                            <img src="images/in_work/process_svarki.webp" alt="Сварочные работы при изготовлении деталей" loading="lazy">
+                        </div>
+                        <div class="work-card__body">
+                            <h3 class="work-card__title">Сварочные работы</h3>
+                            <p class="work-card__text">Сварка узлов и заготовок — полный цикл без привлечения подрядчиков.</p>
+                            <span class="tag">Сварка</span>
+                        </div>
+                    </div>
+                    <div class="work-card anim-fade">
+                        <div class="work-card__img">
+                            <img src="images/in_work/karuselnie_raboti_s_uplotnitelnimi_koltsami.webp" alt="Обработка уплотнительных колец на карусельном станке" loading="lazy">
+                        </div>
+                        <div class="work-card__body">
+                            <h3 class="work-card__title">Уплотнительные кольца</h3>
+                            <p class="work-card__text">Карусельная обработка уплотнительных колец турбины — точность по посадке.</p>
+                            <span class="tag">Карусельная обработка</span>
+                        </div>
+                    </div>
+                    <div class="work-card anim-fade">
+                        <div class="work-card__img">
+                            <img src="images/in_work/rastochnie_raboti_nad_diafragmoi.webp" alt="Расточные работы при изготовлении диафрагмы турбины" loading="lazy">
+                        </div>
+                        <div class="work-card__body">
+                            <h3 class="work-card__title">Расточка диафрагмы</h3>
+                            <p class="work-card__text">Расточные работы при изготовлении диафрагмы — соосность и чистота поверхности.</p>
+                            <span class="tag">Расточка</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="works__cta anim-fade">
                     <p class="works__cta-text">Изготовим такую же деталь для вашей станции — <span class="text-accent">по вашим чертежам.</span></p>
@@ -640,19 +691,24 @@
                 </div>
                 <div class="production__gallery anim-fade">
                     <div class="gallery-item gallery-item--lg">
-                        <div class="img-placeholder">[Фото: общий вид цеха]</div>
+                        <img src="images/tseh/kran.webp" alt="Мостовой кран в цехе — работа с крупногабаритными деталями" loading="lazy">
+                        <span class="gallery-item__caption">Крановое оборудование — работа с крупногабаритными деталями</span>
                     </div>
                     <div class="gallery-item">
-                        <div class="img-placeholder">[Фото: станок в работе]</div>
+                        <img src="images/tseh/zagotovki_1.webp" alt="Заготовки для деталей турбин" loading="lazy">
+                        <span class="gallery-item__caption">Заготовки — собственный склад металла</span>
                     </div>
                     <div class="gallery-item">
-                        <div class="img-placeholder">[Фото: готовая деталь]</div>
+                        <img src="images/tseh/vhodnoi_kontrol.webp" alt="Входной контроль заготовок" loading="lazy">
+                        <span class="gallery-item__caption">Входной контроль заготовок</span>
                     </div>
                     <div class="gallery-item">
-                        <div class="img-placeholder">[Фото: контроль качества]</div>
+                        <img src="images/tseh/zona_braka.webp" alt="Изолятор брака — контроль несоответствующей продукции" loading="lazy">
+                        <span class="gallery-item__caption">Изолятор брака — по процессам СМК ISO 9001</span>
                     </div>
                     <div class="gallery-item gallery-item--lg">
-                        <div class="img-placeholder">[Фото: отгрузка деталей]</div>
+                        <img src="images/tseh/uchastok_rastochki.webp" alt="Участок расточки в цехе" loading="lazy">
+                        <span class="gallery-item__caption">Участок расточных работ</span>
                     </div>
                 </div>
             </div>
