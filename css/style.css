@@ -1259,7 +1259,7 @@ textarea {
 
 .quality__banner {
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto 1fr;
     align-items: center;
     gap: 48px;
     padding: 48px;
@@ -1345,19 +1345,82 @@ textarea {
     font-weight: 800;
 }
 
-.quality__certs {
-    display: flex;
+.quality__docs {
+    margin-top: 40px;
+}
+
+.quality__docs-title {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-white);
+    margin-bottom: 20px;
+}
+
+.quality__docs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 16px;
 }
 
-.quality__cert {
-    width: 150px;
-    height: 200px;
-    border-radius: var(--radius-sm);
-    overflow: hidden;
+.doc-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-surface);
     border: 1px solid var(--color-border);
-    background: var(--color-bg-3);
-    flex-shrink: 0;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    text-decoration: none;
+    transition: all var(--transition);
+}
+
+.doc-card:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card);
+}
+
+.doc-card__img {
+    aspect-ratio: 3/4;
+    background: var(--color-white);
+    overflow: hidden;
+}
+
+.doc-card__img > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.doc-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 12px 14px 14px;
+}
+
+.doc-card__title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-white);
+}
+
+.doc-card__sub {
+    font-size: 0.78rem;
+    color: var(--color-text-2);
+    line-height: 1.45;
+    flex: 1;
+}
+
+.doc-card__type {
+    margin-top: 8px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-accent);
 }
 
 /* ---------- PRODUCTION ---------- */
@@ -2365,11 +2428,6 @@ a.contact-item__value:hover {
 
     .quality__list {
         grid-template-columns: 1fr;
-    }
-
-    .quality__cert {
-        width: 132px;
-        height: 176px;
     }
 
     .requisites__card {
