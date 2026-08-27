@@ -254,6 +254,7 @@ textarea {
 
 .nav__list {
     display: flex;
+    flex-wrap: nowrap;
     gap: 32px;
 }
 
@@ -263,6 +264,7 @@ textarea {
     color: var(--color-text);
     position: relative;
     padding: 4px 0;
+    white-space: nowrap;
 }
 
 .nav__link::after {
