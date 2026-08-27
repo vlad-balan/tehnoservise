@@ -260,7 +260,7 @@ textarea {
 .nav__link {
     font-size: 0.9rem;
     font-weight: 500;
-    color: var(--color-text-2);
+    color: var(--color-text);
     position: relative;
     padding: 4px 0;
 }
@@ -277,7 +277,7 @@ textarea {
 }
 
 .nav__link:hover {
-    color: var(--color-white);
+    color: var(--color-accent);
 }
 
 .nav__link:hover::after {
