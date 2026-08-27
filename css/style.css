@@ -2132,6 +2132,51 @@ a.contact-item__value:hover {
 /* ---------- RESPONSIVE ---------- */
 
 /* Tablet */
+/* Промежуточные экраны (1025–1340px): компактная шапка, чтобы меню
+   и кнопка «Оставить заявку» не обрезались */
+@media (min-width: 1025px) and (max-width: 1340px) {
+    .header__inner {
+        gap: 20px;
+    }
+
+    .logo__icon {
+        width: 100px;
+        height: 100px;
+    }
+
+    .nav__list {
+        gap: 20px;
+    }
+
+    .nav__link {
+        font-size: 0.85rem;
+    }
+
+    .header__actions {
+        gap: 12px;
+    }
+
+    .header__phone {
+        font-size: 0.85rem;
+    }
+}
+
+/* Узкая полоса десктопа: телефон прячем (он есть в контактах и футере),
+   кнопку «Оставить заявку» сохраняем */
+@media (min-width: 1025px) and (max-width: 1250px) {
+    .header__phone {
+        display: none;
+    }
+
+    .nav__list {
+        gap: 16px;
+    }
+
+    .nav__link {
+        font-size: 0.8rem;
+    }
+}
+
 @media (max-width: 1024px) {
     :root {
         --section-py: 80px;
