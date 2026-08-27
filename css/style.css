@@ -2134,6 +2134,30 @@ a.contact-item__value:hover {
 /* Tablet */
 /* Промежуточные экраны (1025–1340px): компактная шапка, чтобы меню
    и кнопка «Оставить заявку» не обрезались */
+/* Широкие экраны (≥1341px): контейнер шапки всё равно 1200px,
+   поэтому меню и действия компактные — иначе кнопка обрезается */
+@media (min-width: 1341px) {
+    .header__inner {
+        gap: 20px;
+    }
+
+    .nav__list {
+        gap: 16px;
+    }
+
+    .nav__link {
+        font-size: 0.8rem;
+    }
+
+    .header__actions {
+        gap: 12px;
+    }
+
+    .header__phone {
+        font-size: 0.8rem;
+    }
+}
+
 @media (min-width: 1025px) and (max-width: 1340px) {
     .header__inner {
         gap: 20px;
