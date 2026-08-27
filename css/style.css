@@ -294,16 +294,15 @@ textarea {
 }
 
 .header__cta {
-    border-color: var(--color-accent);
-    color: var(--color-accent);
+    border-color: transparent;
+    color: var(--color-white);
     background: transparent;
 }
 
 .header__cta:hover {
-    background: var(--color-accent);
     border-color: var(--color-accent);
-    color: var(--color-black);
-    box-shadow: var(--shadow-glow);
+    color: var(--color-accent);
+    background: var(--color-accent-glow);
     transform: translateY(-1px);
 }
 
