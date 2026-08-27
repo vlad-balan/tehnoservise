@@ -2167,7 +2167,19 @@ a.contact-item__value:hover {
     }
 }
 
-@media (min-width: 1025px) and (max-width: 1340px) {
+/* Узкий десктоп (1025–1200px): пункты меню не влезают вместе с
+   телефоном и кнопкой — меню уходит в бургер, телефон и кнопка остаются */
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .header__nav {
+        display: none;
+    }
+
+    .burger {
+        display: flex;
+    }
+}
+
+@media (min-width: 1201px) and (max-width: 1340px) {
     .header__inner {
         gap: 16px;
     }
