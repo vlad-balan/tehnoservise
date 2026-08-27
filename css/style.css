@@ -707,9 +707,9 @@ textarea {
 }
 
 .pain-card:hover {
-    border-color: var(--color-accent-2);
+    border-color: var(--color-accent);
     transform: translateY(-4px);
-    box-shadow: 0 8px 32px rgba(239, 68, 68, 0.1);
+    box-shadow: 0 8px 32px rgba(245, 158, 11, 0.08);
 }
 
 .pain-card__icon {
@@ -719,12 +719,12 @@ textarea {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background: rgba(239, 68, 68, 0.1);
+    background: rgba(138, 180, 248, 0.09);
     margin-bottom: 24px;
 }
 
 .pain-card__icon svg {
-    color: var(--color-accent-2);
+    color: #8AB4F8;
 }
 
 .pain-card__title {
@@ -746,7 +746,7 @@ textarea {
     left: 10%;
     right: 10%;
     height: 2px;
-    background: var(--color-accent-2);
+    background: var(--color-accent);
     opacity: 0;
     transform: rotate(-12deg);
     transition: opacity var(--transition);
