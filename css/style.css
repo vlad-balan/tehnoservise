@@ -287,9 +287,24 @@ textarea {
 /* Header Actions */
 .header__actions {
     display: flex;
-    align-items: center;
-    gap: 16px;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
     flex-shrink: 0;
+}
+
+.header__cta {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    background: transparent;
+}
+
+.header__cta:hover {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-black);
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-1px);
 }
 
 .header__phone {
@@ -2134,27 +2149,15 @@ a.contact-item__value:hover {
 /* Tablet */
 /* Промежуточные экраны (1025–1340px): компактная шапка, чтобы меню
    и кнопка «Оставить заявку» не обрезались */
-/* Широкие экраны (≥1341px): контейнер шапки всё равно 1200px,
-   поэтому меню и действия компактные — иначе кнопка обрезается */
+/* Широкие экраны (≥1341px): контейнер шапки всё равно 1200px.
+   Телефон и кнопка стоят столбиком — места хватает на меню 0.85rem */
 @media (min-width: 1341px) {
-    .header__inner {
-        gap: 20px;
-    }
-
     .nav__list {
-        gap: 16px;
+        gap: 24px;
     }
 
     .nav__link {
-        font-size: 0.8rem;
-    }
-
-    .header__actions {
-        gap: 12px;
-    }
-
-    .header__phone {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
     }
 }
 
@@ -2174,10 +2177,6 @@ a.contact-item__value:hover {
 
     .nav__link {
         font-size: 0.85rem;
-    }
-
-    .header__actions {
-        gap: 12px;
     }
 
     .header__phone {
