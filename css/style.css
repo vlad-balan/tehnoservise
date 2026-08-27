@@ -413,7 +413,7 @@ textarea {
     padding: 14px 0;
     font-size: 1.1rem;
     font-weight: 500;
-    color: var(--color-text-2);
+    color: var(--color-text);
     border-bottom: 1px solid var(--color-border);
     transition: color var(--transition);
 }
@@ -427,6 +427,11 @@ textarea {
     display: flex;
     flex-direction: column;
     gap: 16px;
+}
+
+/* Кнопка в мобильном меню — текст прижат влево, как пункты меню */
+.mobile-menu__footer .btn--full {
+    justify-content: flex-start;
 }
 
 .mobile-menu__phone {
@@ -2183,15 +2188,14 @@ a.contact-item__value:hover {
     }
 }
 
-/* Узкая полоса десктопа: телефон прячем (он есть в контактах и футере),
-   кнопку «Оставить заявку» сохраняем */
+/* Узкая полоса десктопа: уплотняем меню, телефон остаётся видимым */
 @media (min-width: 1025px) and (max-width: 1250px) {
-    .header__phone {
-        display: none;
+    .header__inner {
+        gap: 16px;
     }
 
     .nav__list {
-        gap: 16px;
+        gap: 14px;
     }
 
     .nav__link {
