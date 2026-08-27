@@ -2169,7 +2169,7 @@ a.contact-item__value:hover {
 
 @media (min-width: 1025px) and (max-width: 1340px) {
     .header__inner {
-        gap: 20px;
+        gap: 16px;
     }
 
     .logo__icon {
@@ -2178,30 +2178,15 @@ a.contact-item__value:hover {
     }
 
     .nav__list {
-        gap: 20px;
-    }
-
-    .nav__link {
-        font-size: 0.85rem;
-    }
-
-    .header__phone {
-        font-size: 0.85rem;
-    }
-}
-
-/* Узкая полоса десктопа: уплотняем меню, телефон остаётся видимым */
-@media (min-width: 1025px) and (max-width: 1250px) {
-    .header__inner {
-        gap: 16px;
-    }
-
-    .nav__list {
         gap: 14px;
     }
 
     .nav__link {
         font-size: 0.8rem;
+    }
+
+    .header__phone {
+        font-size: 0.85rem;
     }
 }
 
